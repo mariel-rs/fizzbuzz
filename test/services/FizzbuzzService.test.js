@@ -16,11 +16,11 @@ describe("Test suite for FizzbuzzService", () => {
         Woopa2Explorer = FizzbuzzService.applyValidationInExplorer(explorers[1])
         expect(Woopa2Explorer.trick).toBe(1)
 
-        // Woopa3 has score of 5 (multiple of 5 only)
+        // Woopa3 has score of 5 (multiple of 5)
         Woopa3Explorer = FizzbuzzService.applyValidationInExplorer(explorers[2])
         expect(Woopa3Explorer.trick).toBe("BUZZ")
 
-        // Woopa4 has score of 5 (multiple of 5 only)
+        // Woopa4 has score of 9 (multiple of 3)
         Woopa4Explorer = FizzbuzzService.applyValidationInExplorer(explorers[3])
         expect(Woopa4Explorer.trick).toBe("FIZZ")
 
