@@ -22,7 +22,7 @@ describe("Test suite for FizzbuzzService", () => {
 
         // Woopa4 has score of 9 (multiple of 3)
         Woopa4Explorer = FizzbuzzService.applyValidationInExplorer(explorers[3])
-        expect(Woopa4Explorer.trick).toBe("FIZZy")
+        expect(Woopa4Explorer.trick).toBe("FIZZ")
 
     })
 })
