@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "windows_test": "node ./node_modules/jest/bin/jest.js",
-    "test": "node ./node_modules/.bin/jest"
+    "test": "node ./node_modules/jest/bin/jest.js",
+    "linux_test": "node ./node_modules/.bin/jest"
   },
   "keywords": [],
   "author": "",
