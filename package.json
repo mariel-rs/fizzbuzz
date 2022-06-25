@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/jest/bin/jest.js"
+    "windows_test": "node ./node_modules/jest/bin/jest.js",
+    "test": "node ./node_modules/.bin/jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^28.1.1"
+    "jest": "^26.0.0"
   }
 }
