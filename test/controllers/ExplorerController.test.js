@@ -1,3 +1,4 @@
+const FizzbuzzService = require("../../lib/services/FizzbuzzService");
 const ExplorerController = require("./../../lib/controllers/ExplorerController");
 
 describe("Test suite for ExplorerController", () => {
@@ -87,13 +88,15 @@ describe("Test suite for ExplorerController", () => {
 
         const explorersNode = ExplorerController.getExplorersByMission("node");
 
-        // Set of users to test
-        const fizzbuzz_user = ExplorerController.applyValidationInExplorer(explorersNode[explorersNode.length - 1]);
-        const fizz_user = ExplorerController.applyValidationInExplorer(explorersNode[2]);
-        const buzz_user = ExplorerController.applyValidationInExplorer(explorersNode[4]);
-        const normal_user = ExplorerController.applyValidationInExplorer(explorersNode[0]);
+        const validatedExplorers = explorersNode.map((expl) => FizzbuzzService.applyValidationInExplorer(expl));
 
-        // Validate their tricks
+        // Set of users to test
+        const fizzbuzz_user = validatedExplorers[validatedExplorers.length - 1];
+        const fizz_user = validatedExplorers[2];
+        const buzz_user = validatedExplorers[4];
+        const normal_user = validatedExplorers[0];
+
+        // Validate their tricks: 
         expect(fizzbuzz_user.trick).toBe("FIZZBUZZ");
         expect(fizz_user.trick).toBe("FIZZ");
         expect(buzz_user.trick).toBe("BUZZ");
