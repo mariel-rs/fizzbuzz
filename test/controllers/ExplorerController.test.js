@@ -82,4 +82,21 @@ describe("Test suite for ExplorerController", () => {
 
         expect(totalUsersInJava).toBe(5);
     });
+
+    test("4. Test applyValidationInExplorer", () => {
+
+        const explorersNode = ExplorerController.getExplorersByMission("node");
+
+        // Set of users to test
+        const fizzbuzz_user = ExplorerController.applyValidationInExplorer(explorersNode[explorersNode.length - 1]);
+        const fizz_user = ExplorerController.applyValidationInExplorer(explorersNode[2]);
+        const buzz_user = ExplorerController.applyValidationInExplorer(explorersNode[4]);
+        const normal_user = ExplorerController.applyValidationInExplorer(explorersNode[0]);
+
+        // Validate their tricks
+        expect(fizzbuzz_user.trick).toBe("FIZZBUZZ");
+        expect(fizz_user.trick).toBe("FIZZ");
+        expect(buzz_user.trick).toBe("BUZZ");
+        expect(normal_user.trick).toBe(1);
+    });
 });
