@@ -102,4 +102,13 @@ describe("Test suite for ExplorerController", () => {
         expect(buzz_user.trick).toBe("BUZZ");
         expect(normal_user.trick).toBe(1);
     });
+
+    test("5. Test applyValidationInNumber", () => {
+
+        const numbers = [99, 50, 30, -11];
+        const tricks = numbers.map((number) => FizzbuzzService.applyValidationInNumber(number));
+
+        // Validate
+        expect(tricks).toStrictEqual(["FIZZ", "BUZZ", "FIZZBUZZ", -11]);
+    });
 });

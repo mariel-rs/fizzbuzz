@@ -5,7 +5,7 @@ const FizzbuzzService = require("./../../lib/services/FizzbuzzService");
 
 describe("Test suite for FizzbuzzService", () => {
 
-    test("Get the tricks depending on their score", () => {
+    test("1. Get the tricks depending on the explorer score", () => {
         const explorers = Reader.readJsonFile("test/services/testFile.json");
         
         // Apply validation to all explorers in the array
@@ -23,5 +23,14 @@ describe("Test suite for FizzbuzzService", () => {
         // Woopa4 has score of 9 (multiple of 3)
         expect(validatedExplorers[3].trick).toBe("FIZZ");
 
+    });
+
+    test("2. Get the tricks using number validation", () => {
+        const testNumbers = [36, 45, 2, 15.001, 55];
+
+        const tricks = testNumbers.map((number) => FizzbuzzService.applyValidationInNumber(number));
+
+        // Validate the tricks
+        expect(tricks).toStrictEqual(["FIZZ", "FIZZBUZZ", 2, 15.001, "BUZZ"]);
     });
 });
